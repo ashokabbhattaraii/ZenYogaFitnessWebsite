@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoga for Beginners: Getting Started</title>
+    <link rel="stylesheet" href="../stylesMy.css">
+</head>
+<body>
+    
+    <nav class="menu-bar">
+        <div class="logo-container">
+            <a href="#silder_head"> <img src="../materials\logo.jpeg" alt="Zen Yoga Logo"  style="height: 50px; width:50px; border-radius:50%; margin-right:10px;">
+            </a>
+                <span class="site-name">Zen Yoga</span>
+        </div>
+       
+        <ul class="menu-list" id="">
+            <li><a href="home.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#about-us">About Us</a>
+               
+            </li>
+            <li class="dropdown">
+                <a href="classes.html">Classes</a>
+               
+            </li>
+            <li class="dropdown">
+                <a href="membership.html">Membership</a>
+                
+            </li>
+            <li class="dropdown">
+                <a href="hostevents.html">Workshops & Events</a>
+                <ul class="dropdown-content">
+                    <li><a href="upcomming_events.html">Upcoming Events</a></li>
+                    <li><a href="pastevents.html">Past Events</a></li>
+                    <li><a href="hostevents.html">Host an Event</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="blog.html">Blog</a>
+            
+            </li>
+            <li class="dropdown">
+                <a href="shop.html">Shop</a>
+               
+            </li>
+            <li class="dropdown">
+                <a href="#resources">Resources</a>
+                <ul class="dropdown-content">
+                    <li><a href="faqs.html">FAQs</a></li>
+                    <li><a href="Gallery.html">Gallery</a></li>
+                    
+                </ul>
+            </li>
+            <li><a href="#contact">Contact Us</a></li>
+           
+        </ul>
+         </ul>
+         <div class="menu-toggle">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="right-menu">
+            <div class="search-container">
+                <input type="text" placeholder="Search..." class="search-input" id="searchInput">
+                <button type="button" class="search-button" id="searchButton">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            
+               
+            <a href="register.html" class="login-register">Login/Register</a>
+        </div>
+       
+    </nav>
+
+    <article class="blog-post-detail">
+        <h1>TMindfulness and Meditation Techniques</h1>
+        <img src="../Image/post3.jpg" alt="Yoga Practice">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
+        <div class="hidden-content">
+            <p>...Additional content here...</p>
+            <p>More detailed information about the benefits of daily yoga practice.</p>
+        </div>
+        <span class="read-more">Read More</span>
+        
+        <section class="comments">
+            <h2>Comments</h2>
+            <div class="comment">
+                <p><strong>John Doe:</strong> This is a great article! I've been practicing yoga daily and it has made a huge difference in my life.</p>
+            </div>
+            <div class="comment">
+                <p><strong>Jane Smith:</strong> I love the benefits of yoga. It helps me stay calm and focused throughout the day.</p>
+            </div>
+            <div class="comment">
+                <p><strong>Mark Wilson:</strong> Yoga has been a game changer for me. I feel more energetic and balanced.</p>
+            </div>
+            <form class="comment-form">
+                <h3>Leave a Comment</h3>
+                <textarea placeholder="Write your comment here..." required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </article>
+
+    <footer>
+        <div class="footer-content" id="footer">
+            <div class="footer-section">
+                <h3>About Zen Yoga</h3>
+                <p>Zen Yoga is dedicated to helping you find balance, strength, and inner peace through the practice of yoga.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#classes">Classes</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Zen Yoga. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menuList = document.querySelector('.menu-list');
+        const readMoreBtn = document.querySelector('.read-more');
+        const hiddenContent = document.querySelector('.hidden-content');
+
+        menuToggle.addEventListener('click', () => {
+            menuList.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+
+        readMoreBtn.addEventListener('click', () => {
+            hiddenContent.style.display = 'block';
+            readMoreBtn.style.display = 'none';
+        });
+    </script>
+</body>
+</html>

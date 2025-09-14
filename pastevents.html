@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Past Events - Zen Yoga</title>
+    <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" href="stylesMy.css">
+    <style>
+        .events-section {
+            padding: 80px 0;
+            background-color: rgba(204, 255, 204, 1);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .events-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2ecc71;
+            margin-bottom: 50px;
+        }
+        .event-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .event-card {
+            background-color: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+        .event-card:hover {
+            transform: translateY(-10px);
+        }
+        .event-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .event-details {
+            padding: 20px;
+        }
+        .event-details h3 {
+            font-size: 1.3rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .event-date {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .event-details p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        .past-event {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <nav class="menu-bar">
+        <div class="logo-container">
+            <a href="#silder_head"> <img src="materials\logo.jpeg" alt="Zen Yoga Logo"  style="height: 50px; width:50px; border-radius:50%; margin-right:10px;">
+            </a>
+                <span class="site-name">Zen Yoga</span>
+        </div>
+       
+        <ul class="menu-list" id="">
+            <li><a href="home.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#about-us">About Us</a>
+               
+            </li>
+            <li class="dropdown">
+                <a href="classes.html">Classes</a>
+               
+            </li>
+            <li class="dropdown">
+                <a href="membership.html">Membership</a>
+                
+            </li>
+            <li class="dropdown">
+                <a href="hostevents.html">Workshops & Events</a>
+                <ul class="dropdown-content">
+                    <li><a href="upcomming_events.html">Upcoming Events</a></li>
+                    <li><a href="pastevents.html">Past Events</a></li>
+                    <li><a href="hostevents.html">Host an Event</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="blog.html">Blog</a>
+            
+            </li>
+            <li class="dropdown">
+                <a href="shop.html">Shop</a>
+               
+            </li>
+            <li class="dropdown">
+                <a href="#resources">Resources</a>
+                <ul class="dropdown-content">
+                    <li><a href="faqs.html">FAQs</a></li>
+                    <li><a href="Gallery.html">Gallery</a></li>
+                    
+                </ul>
+            </li>
+            <li><a href="home.html#contact">Contact Us</a></li>
+           
+        </ul>
+         </ul>
+         <div class="menu-toggle">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="right-menu">
+            <div class="search-container">
+                <input type="text" placeholder="Search..." class="search-input" id="searchInput">
+                <button type="button" class="search-button" id="searchButton">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            
+               
+            <a href="register.html" class="login-register">Login/Register</a>
+        </div>
+       
+    </nav>
+   
+    
+    
+
+    <section class="events-section">
+        <center>   <h2>Past Events</h2></center>
+        <div class="container">
+         
+            <div class="event-grid">
+                <div class="event-card past-event">
+                    <img src="Image/wk-1.jpg" alt="Spring Equinox Yoga Festival">
+                    <div class="event-details">
+                        <h3>Spring Equinox Yoga Festival</h3>
+                        <p class="event-date">March 20, 2024</p>
+                        <p>Our annual Spring Equinox Yoga Festival was a day-long celebration of yoga, music, and community. Participants enjoyed a variety of yoga classes, from gentle flow to power yoga, led by our experienced instructors. The event also featured live music performances, meditation sessions, and a marketplace with local artisans. The highlight was the sunset group meditation in our beautiful garden, symbolizing the balance of day and night on the equinox.</p>
+                    </div>
+                </div>
+                <div class="event-card past-event">
+                    <img src="Image/wk-2.jpg" alt="Mindfulness Retreat">
+                    <div class="event-details">
+                        <h3>Mindfulness Retreat</h3>
+                        <p class="event-date">January 10-12, 2024</p>
+                        <p>Our three-day Mindfulness Retreat offered participants a deep dive into mindfulness practices and silent reflection. The retreat included guided meditation sessions, mindful walking exercises, and workshops on incorporating mindfulness into daily life. Participants learned techniques for stress reduction, emotional regulation, and cultivating present-moment awareness. The retreat concluded with a group sharing session where attendees reflected on their experiences and set intentions for maintaining their practice.</p>
+                    </div>
+                </div>
+                <div class="event-card past-event">
+                    <img src="Image/wk-3.jpg" alt="Yoga Teacher Training">
+                    <div class="event-details">
+                        <h3>Yoga Teacher Training</h3>
+                        <p class="event-date">November 1-30, 2023</p>
+                        <p>Our intensive 200-hour Yoga Teacher Training program was a transformative experience for aspiring yoga instructors. The month-long course covered asana practice, anatomy, yoga philosophy, teaching methodology, and the business of yoga. Trainees participated in daily practice, teaching exercises, and in-depth study of yoga texts. Guest lecturers provided expertise in specialized areas such as Ayurveda and meditation. Graduates left equipped with the knowledge and confidence to begin their journey as yoga teachers.</p>
+                    </div>
+                </div>
+                <div class="event-card past-event">
+                    <img src="Image/wk-4.jpg" alt="Summer Solstice Celebration">
+                    <div class="event-details">
+                        <h3>Summer Solstice Celebration</h3>
+                        <p class="event-date">June 21, 2023</p>
+                        <p>Our Summer Solstice Celebration was a vibrant event honoring the longest day of the year. The day began with 108 Sun Salutations at sunrise, led by our senior instructors. Throughout the day, we offered a variety of yoga classes, including heated vinyasa, yin yoga, and partner yoga. The celebration also featured workshops on seasonal eating and herbal remedies. The event concluded with a group meditation and fire ceremony, symbolizing the light and energy of the sun.</p>
+                    </div>
+                </div>
+                <div class="event-card past-event">
+                    <img src="Image/wk-5.jpg" alt="Ayurveda Workshop">
+                    <div class="event-details">
+                        <h3>Ayurveda Workshop</h3>
+                        <p class="event-date">April 15-16, 2023</p>
+                        <p>Our two-day Ayurveda Workshop provided an immersive introduction to the ancient healing system of Ayurveda. Participants learned about the three doshas (Vata, Pitta, and Kapha) and how to determine their own constitution. The workshop covered Ayurvedic nutrition, daily routines for optimal health, and the use of herbs and spices for healing. Attendees also participated in hands-on activities such as making herbal teas and learning self-massage techniques. The workshop empowered participants with practical tools to incorporate Ayurvedic principles into their daily lives.</p>
+                    </div>
+                </div>
+                <div class="event-card past-event">
+                    <img src="Image/wk-4.jpg" alt="New Year's Eve Yoga and Meditation">
+                    <div class="event-details">
+                        <h3>New Year's Eve Yoga and Meditation</h3>
+                        <p class="event-date">December 31, 2022</p>
+                        <p>Our New Year's Eve Yoga and Meditation event offered a mindful alternative to traditional celebrations. The evening began with a gentle yoga practice, focusing on reflection and release of the past year. This was followed by a guided meditation for setting intentions for the coming year. As midnight approached, participants joined in a group chanting session, culminating in 108 repetitions of Om to welcome the new year. The event concluded with a light, healthy meal and tea ceremony, allowing attendees to connect and share their aspirations for the year ahead.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+<footer>
+    <div class="footer-content" id="footer">
+        <div class="footer-section">
+            <h3>About Zen Yoga</h3>
+            <p>Zen Yoga is dedicated to helping you find balance, strength, and inner peace through the practice of yoga.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#classes">Classes</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Zen Yoga. All rights reserved.</p>
+    </div>
+</footer>
+</body>
+</html>

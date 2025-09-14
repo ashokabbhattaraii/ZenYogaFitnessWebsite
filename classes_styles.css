@@ -1,0 +1,343 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+
+
+
+    
+}
+.container{
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+}
+/* .menu-bar {
+    background-color: #2ecc71;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+} */
+.menu-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%; /* Add padding on the sides */
+    box-sizing: border-box; /* Ensure padding is included in width */
+    z-index: 1000;
+    background-color: rgba(46, 204, 113, 0.9);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.site-name {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #fff;
+}
+
+.menu-list {
+    list-style-type: none;
+   font-size: 1.2rem;
+   
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu-list li {
+    position: relative;
+    list-style: none;
+}
+
+.menu-list li a {
+    /* color: white; */
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.menu-list li a:hover {
+    background-color: #27ae60;
+    list-style: none;
+    color: #e8f8e8;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #27ae60;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content li {
+    width: 100%;
+}
+
+.dropdown-content li a {
+    padding: 12px 20px;
+    color: white;
+}
+
+.dropdown-content li a:hover {
+    background-color: #219653;
+}
+
+.right-menu {
+    display: flex;
+    align-items: center;
+}
+
+.search-container {
+    display: flex;
+    margin-right: 15px;
+    overflow: hidden;
+}
+
+.search-input {
+    padding: 8px;
+    border: none;
+    border-radius: 10px solid green;
+   
+    outline: none;
+    width: 0;
+    transition: width 0.3s ease-in-out;
+}
+
+.search-input.active {
+    width: 200px;
+}
+
+.search-button {
+    background-color: #27ae60;
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s, border-radius 0.3s;
+}
+
+.search-button:hover {
+    background-color: #219653;
+}
+
+.search-button.active {
+    border-radius: 0 4px 4px 0;
+}
+
+.login-register {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    background-color: #27ae60;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.login-register:hover {
+    background-color: #219653;
+}
+
+/* Beautiful hover effect */
+.menu-list li a::after {
+    content: '';
+    
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #e8f8e8;
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-list li a:hover::after {
+    width: 100%;
+    list-style: none;
+    left: 0;
+}
+
+@media (max-width: 1024px) {
+    .menu-bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu-list {
+        margin-top: 15px;
+    }
+
+    .right-menu {
+        margin-top: 15px;
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+.classes-section {
+  padding: 80px 0;
+  background-color: #f9f9f9;
+  background-image: url('himalayan-background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.classes-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+}
+
+.classes-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2.5em;
+  color: #333;
+}
+
+.section-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  color: #555;
+  font-size: 1.1em;
+}
+
+.class-types {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.class-card {
+  flex-basis: calc(33.333% - 30px);
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.class-card:hover {
+  transform: translateY(-5px);
+}
+
+.class-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.class-card h3 {
+  padding: 20px 20px 10px;
+  font-size: 1.5em;
+  color: #333;
+}
+
+.class-card p {
+  padding: 0 20px 20px;
+  color: #666;
+}
+
+.class-btn {
+  display: inline-block;
+  margin: 0 20px 20px;
+  padding: 10px 20px;
+  background-color: #e67e22;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.class-btn:hover {
+  background-color: #d35400;
+}
+
+.nepali-influence {
+  margin-top: 60px;
+  padding: 30px;
+  background-color: rgba(231, 76, 60, 0.1);
+  border-radius: 8px;
+}
+
+.nepali-influence h3 {
+  color: #c0392b;
+  margin-bottom: 15px;
+}
+
+.nepali-influence p {
+  color: #555;
+}
+
+.class-cta {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #e67e22;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease;
+  margin: 0 10px;
+}
+
+.cta-button:hover {
+  background-color: #d35400;
+}
+
+.cta-button.secondary {
+  background-color: #3498db;
+}
+
+.cta-button.secondary:hover {
+  background-color: #2980b9;
+}
+
+@media (max-width: 1024px) {
+  .class-card {
+    flex-basis: calc(50% - 30px);
+  }
+}
+
+@media (max-width: 768px) {
+  .class-card {
+    flex-basis: 100%;
+  }
+  
+  .cta-button {
+    display: block;
+    margin: 10px auto;
+  }
+}

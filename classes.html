@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Classes - Zen Yoga</title>
+    <link rel="stylesheet" href="stylesMy.css">
+    <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .online-classes {
+            padding: 80px 0;
+            background-color: rgba(204, 255, 204, 1);
+        }
+
+        .online-classes h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2ecc71;
+            margin-bottom: 50px;
+        }
+
+        .classes-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .class-card {
+            background-color: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .class-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .class-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .class-info {
+            padding: 20px;
+        }
+
+        .class-info h3 {
+            font-size: 1.3rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .class-info p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .class-info .instructor {
+            font-weight: bold;
+            color: #2ecc71;
+        }
+
+        .class-info .level {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #f0f0f0;
+            color: #333;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .enroll-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #2ecc71;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .enroll-btn:hover {
+            background-color: #27ae60;
+            transform: scale(1.05);
+        }
+
+        .class-schedule {
+            margin-top: 80px;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .class-schedule h3 {
+            font-size: 2rem;
+            color: #2ecc71;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .schedule-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 15px;
+        }
+
+        .schedule-table th, .schedule-table td {
+            padding: 15px;
+            text-align: left;
+        }
+
+        .schedule-table th {
+            background-color: #2ecc71;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .schedule-table tr {
+            background-color: #f9f9f9;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .schedule-table tr:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .schedule-table td:first-child {
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+
+        .schedule-table td:last-child {
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        .schedule-icon {
+            margin-right: 10px;
+            color: #2ecc71;
+        }
+
+        .benefits-section {
+            margin-top: 80px;
+            text-align: center;
+        }
+
+        .benefits-section h3 {
+            font-size: 2rem;
+            color: #2ecc71;
+            margin-bottom: 30px;
+        }
+
+        .benefits-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .benefit-item {
+            flex: 1 1 300px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-icon {
+            font-size: 2rem;
+            color: #2ecc71;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .class-card {
+                width: 100%;
+            }
+
+            .class-schedule {
+                padding: 20px;
+            }
+
+            .schedule-table {
+                font-size: 0.9rem;
+            }
+
+            .benefit-item {
+                flex-basis: 100%;
+            }
+        }
+        .popup-overlay {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.7);
+          z-index: 1000;
+          justify-content: center;
+          align-items: center;
+      }
+
+      .popup-form {
+          background-color: #fff;
+          padding: 30px;
+          border-radius: 15px;
+          width: 90%;
+          max-width: 400px;
+          position: relative;
+      }
+
+      .popup-form h3 {
+          margin-bottom: 20px;
+          color: #2ecc71;
+      }
+
+      .popup-form input,
+      .popup-form select {
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 15px;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+      }
+
+      .popup-form button {
+          background-color: #2ecc71;
+          color: white;
+          border: none;
+          padding: 10px 20px;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+      }
+
+      .popup-form button:hover {
+          background-color: #27ae60;
+      }
+
+      .close-popup {
+          position: absolute;
+          top: 10px;
+          right: 15px;
+          font-size: 1.5rem;
+          color: #666;
+          cursor: pointer;
+          transition: color 0.3s;
+      }
+
+      .close-popup:hover {
+          color: #2ecc71;
+      }
+    </style>
+</head>
+<body>
+    
+    
+    <nav class="menu-bar">
+        <div class="logo-container">
+            <a href="#silder_head"> <img src="materials\logo.jpeg" alt="Zen Yoga Logo"  style="height: 50px; width:50px; border-radius:50%; margin-right:10px;">
+            </a>
+                <span class="site-name">Zen Yoga</span>
+        </div>
+       
+        <ul class="menu-list" id="">
+            <li><a href="home.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#about-us">About Us</a>
+               
+            </li>
+            <li class="dropdown">
+                <a href="classes.html">Classes</a>
+               
+            </li>
+            <li class="dropdown">
+                <a href="membership.html">Membership</a>
+                
+            </li>
+            <li class="dropdown">
+                <a href="hostevents.html">Workshops & Events</a>
+                <ul class="dropdown-content">
+                    <li><a href="upcomming_events.html">Upcoming Events</a></li>
+                    <li><a href="pastevents.html">Past Events</a></li>
+                    <li><a href="hostevents.html">Host an Event</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="blog.html">Blog</a>
+            
+            </li>
+            <li class="dropdown">
+                <a href="shop.html">Shop</a>
+               
+            </li>
+            <li class="dropdown">
+                <a href="#resources">Resources</a>
+                <ul class="dropdown-content">
+                    <li><a href="faqs.html">FAQs</a></li>
+                    <li><a href="Gallery.html">Gallery</a></li>
+                    
+                </ul>
+            </li>
+            <li><a href="home.html#contact">Contact Us</a></li>
+           
+        </ul>
+         </ul>
+         <div class="menu-toggle">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="right-menu">
+            <div class="search-container">
+                <input type="text" placeholder="Search..." class="search-input" id="searchInput">
+                <button type="button" class="search-button" id="searchButton">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            
+               
+            <a href="register.html" class="login-register">Login/Register</a>
+        </div>
+       
+    </nav>
+   
+
+    <section class="online-classes">
+        <h2>Our Online Classes</h2>
+        <div class="classes-container">
+            <div class="class-card">
+                <img src="Image/classes-1.jpg" alt="Beginner Yoga">
+                <div class="class-info">
+                    <span class="level">Beginner</span>
+                    <h3>Beginner Yoga</h3>
+                    <p>Perfect for those new to yoga. Learn the basics and build a strong foundation.</p>
+                    <p class="instructor">Instructor: Deepak Kumar Thakur</p>
+                    <a href="#" class="enroll-btn">Enroll Now</a>
+                </div>
+            </div>
+            <div class="class-card">
+                <img src="Image/classes-2.jpg" alt="Vinyasa Flow">
+                <div class="class-info">
+                    <span class="level">Intermediate</span>
+                    <h3>Vinyasa Flow</h3>
+                    <p>A dynamic practice that synchronizes breath with movement for improved strength and flexibility.</p>
+                    <p class="instructor">Instructor: Ashok Bhattarai</p>
+                    <a href="#" class="enroll-btn">Enroll Now</a>
+                </div>
+            </div>
+            <div class="class-card">
+                <img src="Image/classes-3.jpg" alt="Meditation & Mindfulness">
+                <div class="class-info">
+                    <span class="level">All Levels</span>
+                    <h3>Meditation & Mindfulness</h3>
+                    <p>Learn techniques to calm your mind, reduce stress, and increase awareness in daily life.</p>
+                    <p class="instructor">Instructor: Aagendra Sunwar</p>
+                    <a href="#" class="enroll-btn">Enroll Now</a>
+                </div>
+            </div>
+            <div class="class-card">
+                <img src="Image/classes-4.jpg" alt="Yin Yoga">
+                <div class="class-info">
+                    <span class="level">All Levels</span>
+                    <h3>Yin Yoga</h3>
+                    <p>A slow-paced style of yoga with postures that are held for longer periods of time to improve flexibility.</p>
+                    <p class="instructor">Instructor: Sovem Jung Bharati</p>
+                    <a href="#" class="enroll-btn">Enroll Now</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="class-schedule">
+            <h3>Class Schedule</h3>
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Time</th>
+                        <th>Class</th>
+                        <th>Instructor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><i class="fas fa-calendar-day schedule-icon"></i>Monday</td>
+                        <td><i class="fas fa-clock schedule-icon"></i>9:00 AM - 10:00 AM</td>
+                        <td><i class="fas fa-yoga schedule-icon"></i>Beginner Yoga</td>
+                        <td><i class="fas fa-user-tie schedule-icon"></i>Deepak Kumar Thakur</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-calendar-day schedule-icon"></i>Wednesday</td>
+                        <td><i class="fas fa-clock schedule-icon"></i>6:00 PM - 7:00 PM</td>
+                        <td><i class="fas fa-yoga schedule-icon"></i>Vinyasa Flow</td>
+                        <td><i class="fas fa-user-tie schedule-icon"></i>Ashok Bhattarai</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-calendar-day schedule-icon"></i>Friday</td>
+                        <td><i class="fas fa-clock schedule-icon"></i>7:30 AM - 8:30 AM</td>
+                        <td><i class="fas fa-meditation schedule-icon"></i>Meditation & Mindfulness</td>
+                        <td><i class="fas fa-user-tie schedule-icon"></i>Aagendra Sunwar</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-calendar-day schedule-icon"></i>Saturday</td>
+                        <td><i class="fas fa-clock schedule-icon"></i>10:00 AM - 11:00 AM</td>
+                        <td><i class="fas fa-yoga schedule-icon"></i>Yin Yoga</td>
+                        <td><i class="fas fa-user-tie schedule-icon"></i>Sovem Jung Bharati</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="benefits-section">
+            <h3>Benefits of Online Yoga Classes</h3>
+            <div class="benefits-list">
+                <div class="benefit-item">
+                    <i class="fas fa-home benefit-icon"></i>
+                    <h4>Practice from Home</h4>
+                    <p>Enjoy the comfort and convenience of practicing yoga in your own space.</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-clock benefit-icon"></i>
+                    <h4>Flexible Scheduling</h4>
+                    <p>Choose from various class times that fit your busy lifestyle.</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-users benefit-icon"></i>
+                    <h4>Interactive Experience</h4>
+                    <p>Engage with instructors and fellow students through live sessions.</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-laptop benefit-icon"></i>
+                    <h4>Access Anywhere</h4>
+                    <p>Join classes from anywhere with an internet connection.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="popup-overlay" id="enrollmentPopup">
+      <div class="popup-form">
+          <span class="close-popup" onclick="closePopup()">&times;</span>
+          <h3>Enroll in Class</h3>
+          <form id="enrollmentForm">
+              <input type="text" placeholder="Full Name" required>
+              <input type="email" placeholder="Email Address" required>
+              <input type="tel" placeholder="Phone Number">
+              <select required>
+                  <option value="">Select Class</option>
+                  <option value="beginner-yoga">Beginner Yoga</option>
+                  <option value="vinyasa-flow">Vinyasa Flow</option>
+                  <option value="meditation-mindfulness">Meditation & Mindfulness</option>
+                  <option value="yin-yoga">Yin Yoga</option>
+              </select>
+              <button type="submit">Submit Enrollment</button>
+          </form>
+      </div>
+  </div>
+<footer>
+  <div class="footer-content" id="footer">
+      <div class="footer-section">
+          <h3>About Zen Yoga</h3>
+          <p>Zen Yoga is dedicated to helping you find balance, strength, and inner peace through the practice of yoga.</p>
+      </div>
+      <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#classes">Classes</a></li>
+              <li><a href="#contact">Contact</a></li>
+          </ul>
+      </div>
+      <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+      </div>
+  </div>
+  <div class="footer-bottom">
+      <p>&copy; 2024 Zen Yoga. All rights reserved.</p>
+  </div>
+</footer>
+<script>
+  // Function to open the popup
+  function openPopup() {
+      document.getElementById('enrollmentPopup').style.display = 'flex';
+  }
+
+  // Function to close the popup
+  function closePopup() {
+      document.getElementById('enrollmentPopup').style.display = 'none';
+  }
+
+  // Add click event listeners to all "Enroll Now" buttons
+  document.querySelectorAll('.enroll-btn').forEach(button => {
+      button.addEventListener('click', function(e) {
+          e.preventDefault();
+          openPopup();
+      });
+  });
+
+  // Handle form submission
+  document.getElementById('enrollmentForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Here you would typically send the form data to your server
+      alert('Enrollment submitted successfully!');
+      
+      closePopup();
+  });
+</script>
+
+</body>
+</html>

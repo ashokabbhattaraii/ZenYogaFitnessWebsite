@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zen Yoga</title>
+    <link rel="stylesheet" href="stylesMy.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Adding the CSS directly for simplicity */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .menu-bar {
+            display: flex;
+            align-items: center;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        .logo-container img {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .site-name {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        .menu-list {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            margin-left: auto;
+        }
+        .menu-list li {
+            position: relative;
+        }
+        .menu-list a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: block;
+        }
+        .menu-list a:hover {
+            background-color: #575757;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            padding: 12px 16px;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <nav class="menu-bar">
+        <div class="logo-container">
+            <img src="materials/logo.jpeg" alt="Zen Yoga Logo">
+            <span class="site-name">Zen Yoga</span>
+        </div>
+        <ul class="menu-list">
+            <li><a href="home.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#about-us">About Us</a>
+            </li>
+            <li class="dropdown">
+                <a href="classes.html">Classes</a>
+            </li>
+            <li class="dropdown">
+                <a href="#membership">Membership</a>
+            </li>
+            <li class="dropdown">
+                <a href="hostevents.html">Workshops & Events</a>
+                <ul class="dropdown-content">
+                    <li><a href="upcomming_events.html">Upcoming Events</a></li>
+                    <li><a href="pastevents.html">Past Events</a></li>
+                    <li><a href="hostevents.html">Host an Event</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="blog.html">Blog</a>
+            </li>
+            <li class="dropdown">
+                <a href="#shop">Shop</a>
+                <ul class="dropdown-content">
+                    <li><a href="#yoga-gear">Yoga Gear</a></li>
+                    <li><a href="#apparel">Apparel</a></li>
+                    <li><a href="#accessories">Accessories</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</body>
+</html>

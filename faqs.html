@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs - Zen Yoga</title>
+    <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" href="stylesMy.css">
+    <style>
+        .faq-section {
+            padding: 80px 0;
+            background-color: rgba(204, 255, 204, 1);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: #fff;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            font-size: 1.1rem;
+            font-weight: bold;
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 1000px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="menu-bar">
+        <div class="logo-container">
+            <a href="#silder_head"> <img src="materials\logo.jpeg" alt="Zen Yoga Logo"  style="height: 50px; width:50px; border-radius:50%; margin-right:10px;">
+            </a>
+                <span class="site-name">Zen Yoga</span>
+        </div>
+       
+        <ul class="menu-list" id="">
+            <li><a href="home.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#about-us">About Us</a>
+               
+            </li>
+            <li class="dropdown">
+                <a href="classes.html">Classes</a>
+               
+            </li>
+            <li class="dropdown">
+                <a href="membership.html">Membership</a>
+                
+            </li>
+            <li class="dropdown">
+                <a href="hostevents.html">Workshops & Events</a>
+                <ul class="dropdown-content">
+                    <li><a href="upcomming_events.html">Upcoming Events</a></li>
+                    <li><a href="pastevents.html">Past Events</a></li>
+                    <li><a href="hostevents.html">Host an Event</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="blog.html">Blog</a>
+            
+            </li>
+            <li class="dropdown">
+                <a href="shop.html">Shop</a>
+               
+            </li>
+            <li class="dropdown">
+                <a href="#resources">Resources</a>
+                <ul class="dropdown-content">
+                    <li><a href="faqs.html">FAQs</a></li>
+                    <li><a href="Gallery.html">Gallery</a></li>
+                    
+                </ul>
+            </li>
+            <li><a href="home.html#contact">Contact Us</a></li>
+           
+        </ul>
+         </ul>
+         <div class="menu-toggle">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="right-menu">
+            <div class="search-container">
+                <input type="text" placeholder="Search..." class="search-input" id="searchInput">
+                <button type="button" class="search-button" id="searchButton">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            
+               
+            <a href="register.html" class="login-register">Login/Register</a>
+        </div>
+       
+    </nav>
+   
+    
+    
+    <section class="faq-section">
+       <center> <h2>Frequently Asked Questions</h2></center>
+        <div class="container">
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">What types of yoga do you offer?</div>
+                    <div class="faq-answer">
+                        <p>We offer a variety of yoga styles including Hatha, Vinyasa, Yin, and Restorative yoga. Each class is designed to cater to different needs and experience levels.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Do I need to bring my own yoga mat?</div>
+                    <div class="faq-answer">
+                        <p>While we encourage bringing your own mat for hygiene reasons, we do provide mats for those who need them. We sanitize all studio equipment regularly.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Are your classes suitable for beginners?</div>
+                    <div class="faq-answer">
+                        <p>Yes, we have classes suitable for all levels, including complete beginners. Our instructors are trained to provide modifications and alternatives for different skill levels.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How often should I practice yoga?</div>
+                    <div class="faq-answer">
+                        <p>The frequency of practice depends on your personal goals and schedule. For beginners, we recommend starting with 2-3 classes per week. As you progress, you may find benefit in practicing more frequently.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Do you offer private yoga sessions?</div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer private one-on-one and small group sessions. These can be tailored to your specific needs and goals. Contact us for more information and pricing.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  
+<footer>
+    <div class="footer-content" id="footer">
+        <div class="footer-section">
+            <h3>About Zen Yoga</h3>
+            <p>Zen Yoga is dedicated to helping you find balance, strength, and inner peace through the practice of yoga.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#classes">Classes</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Zen Yoga. All rights reserved.</p>
+    </div>
+</footer>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                question.parentElement.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

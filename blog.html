@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zen Yoga Blog</title>
+    <script src="Main assignmnet\script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="stylesMy.css">
+
+</head>
+<body>
+    <nav class="menu-bar">
+        <div class="logo-container">
+            <a href="#silder_head"> <img src="materials\logo.jpeg" alt="Zen Yoga Logo"  style="height: 50px; width:50px; border-radius:50%; margin-right:10px;">
+            </a>
+                <span class="site-name">Zen Yoga</span>
+        </div>
+       
+        <ul class="menu-list" id="">
+            <li><a href="home.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#about-us">About Us</a>
+               
+            </li>
+            <li class="dropdown">
+                <a href="classes.html">Classes</a>
+               
+            </li>
+            <li class="dropdown">
+                <a href="membership.html">Membership</a>
+                
+            </li>
+            <li class="dropdown">
+                <a href="hostevents.html">Workshops & Events</a>
+                <ul class="dropdown-content">
+                    <li><a href="upcomming_events.html">Upcoming Events</a></li>
+                    <li><a href="pastevents.html">Past Events</a></li>
+                    <li><a href="hostevents.html">Host an Event</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="blog.html">Blog</a>
+            
+            </li>
+            <li class="dropdown">
+                <a href="shop.html">Shop</a>
+               
+            </li>
+            <li class="dropdown">
+                <a href="#resources">Resources</a>
+                <ul class="dropdown-content">
+                    <li><a href="faqs.html">FAQs</a></li>
+                    <li><a href="Gallery.html">Gallery</a></li>
+                    
+                </ul>
+            </li>
+            <li><a href="home.html#contact">Contact Us</a></li>
+           
+        </ul>
+         </ul>
+         <div class="menu-toggle">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="right-menu">
+            <div class="search-container">
+                <input type="text" placeholder="Search..." class="search-input" id="searchInput">
+                <button type="button" class="search-button" id="searchButton">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            
+               
+            <a href="register.html" class="login-register">Login/Register</a>
+        </div>
+       
+    </nav>
+   
+    <section class="blog-posts">
+        <center><h1>Zen Yoga Blog</h1></center>
+        
+        <div class="blog-container">
+            <div class="blog-post">
+                <img src="Image/post1.jpg" alt="Blog Post 1">
+                <h2><a href="Blog/blog-post1.html">The Benefits of Daily Yoga Practice</a></h2>
+                <p>Discover how daily yoga practice can enhance your physical and mental well-being...</p>
+            </div>
+            <div class="blog-post">
+                <img src="Image/post2.jpg" alt="Blog Post 2">
+                <h2><a href="/Blog/blog-post2.html">Yoga for Beginners: Getting Started</a></h2>
+                <p>Are you new to yoga? Learn the basics to get started on your yoga journey...</p>
+            </div>
+            <div class="blog-post">
+                <img src="Image/post3.jpg" alt="Blog Post 3">
+                <h2><a href="/Blog/blog-post3.html">Mindfulness and Meditation Techniques</a></h2>
+                <p>Explore mindfulness and meditation techniques to reduce stress and improve focus...</p>
+            </div>
+            <div class="blog-post">
+                <img src="Image/post3.jpg" alt="Blog Post 4">
+                <h2><a href="/Blog/blog-post4.html">Advanced Yoga Poses for Strength</a></h2>
+                <p>Challenge yourself with advanced yoga poses to build strength and flexibility...</p>
+            </div>
+            <div class="blog-post">
+                <img src="Image/post5.jpg" alt="Blog Post 5">
+                <h2><a href="/Blog/blog-post5.html">Yoga Retreats: What to Expect</a></h2>
+                <p>Learn what to expect from a yoga retreat and how it can benefit your practice...</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menuList = document.querySelector('.menu-list');
+
+        menuToggle.addEventListener('click', () => {
+            menuList.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+    </script>
+   
+</body>
+</html>
